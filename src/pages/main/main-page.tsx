@@ -5,7 +5,6 @@ import AboutSection from './sections/about-section';
 import SkillsSection from './sections/skills-section';
 import ExperienceSection from './sections/experience-section';
 import ProjectsSection from './sections/projects-section';
-import ContactSection from './sections/contact-section';
 
 const MainPage = () => {
   return (
@@ -17,7 +16,6 @@ const MainPage = () => {
         <SkillsSection />
         <ExperienceSection />
         <ProjectsSection />
-        <ContactSection />
       </main>
       <Footer />
     </>
