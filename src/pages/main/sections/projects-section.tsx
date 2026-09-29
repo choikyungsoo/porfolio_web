@@ -4,6 +4,7 @@ import NaviImg from '@assets/nabi.svg';
 import LightUpImg from '@assets/lightup.svg';
 import FillmateImg from '@assets/filmate.svg';
 import MamonImg from '@assets/mindon.svg';
+import CodeItImg from '@assets/coodeit.png';
 import { cn } from '@libs/cn';
 import { useState } from 'react';
 
@@ -253,6 +254,26 @@ const PROJECTS: Project[] = [
       '감상평 작성·조회 기능 및 UI 구현',
       '회원가입·로그인 API 연동 및 공통 컴포넌트 개발',
       '명지대학교 SW 경진대회 우수상 수상',
+    ],
+  },
+  {
+    title: '조각집',
+    description: '그룹 구성원과 추억을 기록하고 공유하는 커뮤니티 서비스입니다.',
+    tags: ['React', 'JavaScript', 'Tailwind CSS'],
+    github: 'https://github.com/CodeItBoost3/CodeItBoost3_FE',
+    demo: '#',
+    gradient: '#4338ca #6366f1',
+    image: CodeItImg,
+    pattern: 'dashboard',
+    category: '프로젝트',
+    period: '2025',
+    role: 'Frontend Developer',
+    details: [
+      '메인·마이페이지의 그룹 및 게시글 조회 API 연동',
+      '작성 글·댓글·스크랩 목록 조회 및 화면 구현',
+      '비로그인 사용자 접근 제어 및 로그인 유도 팝업 구현',
+      '게시글·추억글 등록 및 삭제 후 목록 즉시 갱신 처리',
+      '마이페이지 슬라이드 UI 및 이미지 URL 처리 오류 개선',
     ],
   },
   {
