@@ -70,7 +70,7 @@ const HeroSection = () => {
           <div className="flex animate-delay-3 animate-fade-in-up items-center gap-3">
             <span className="h-px w-8 bg-indigo-500" />
             <p className="font-medium text-indigo-300 text-lg tracking-wide">
-              Full Stack Developer
+              Software Engineer
             </p>
             <span className="h-px w-8 bg-indigo-500" />
           </div>

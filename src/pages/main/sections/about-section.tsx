@@ -1,4 +1,4 @@
-import profileImg from '@assets/profile.svg';
+import profileImg from '@assets/profile.png';
 
 const STATS = [
   { value: '2+', label: 'Years Experience' },
@@ -49,7 +49,7 @@ const AboutSection = () => {
             <div className='space-y-4 text-slate-400 leading-relaxed'>
               <p>
                 안녕하세요! 저는 사용자 중심의 웹 경험을 만드는 것에 열정을 가진
-                풀스택 개발자 <span className='text-white font-medium'>최경수</span>입니다.
+                소프트웨어 개발자 <span className='text-white font-medium'>최경수</span>입니다.
               </p>
               <p>
                 React, TypeScript를 주력으로 사용하며, 컴포넌트 설계와 성능 최적화에
