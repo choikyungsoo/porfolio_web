@@ -30,11 +30,8 @@ const Navigation = () => {
     >
       <nav className='max-w-6xl mx-auto px-6 h-16 flex-row-between'>
         {/* Logo */}
-        <a
-          href='#hero'
-          className='text-xl font-bold gradient-text hover:opacity-80 transition-opacity'
-        >
-          KS.
+        <a href='#hero' className='hover:opacity-80 transition-opacity'>
+          <img src='/logo.svg' alt='Kyungsoo Choi logo' className='h-8 w-auto' />
         </a>
 
         {/* Desktop Nav */}
