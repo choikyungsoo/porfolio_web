@@ -1,3 +1,5 @@
+import profileImg from '@assets/profile.png';
+
 const STATS = [
   { value: '2+', label: 'Years Experience' },
   { value: '10+', label: 'Projects Completed' },
@@ -22,11 +24,13 @@ const AboutSection = () => {
           {/* Left: Visual */}
           <div className='flex-col-center'>
             <div className='relative'>
-              {/* Profile image placeholder */}
-              <div className='w-64 h-64 md:w-80 md:h-80 rounded-2xl glass-card flex-col-center overflow-hidden'>
-                <div className='w-full h-full bg-gradient-to-br from-indigo-600/20 via-violet-600/20 to-cyan-600/20 flex-col-center'>
-                  <span className='text-8xl'>👨‍💻</span>
-                </div>
+              {/* Profile image */}
+              <div className='w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden'>
+                <img
+                  src={profileImg}
+                  alt='Kyungsoo Choi'
+                  className='w-full h-full object-cover'
+                />
               </div>
 
               {/* Decorative elements */}
@@ -46,7 +50,7 @@ const AboutSection = () => {
             <div className='space-y-4 text-slate-400 leading-relaxed'>
               <p>
                 안녕하세요! 저는 사용자 중심의 웹 경험을 만드는 것에 열정을 가진
-                프론트엔드 개발자 <span className='text-white font-medium'>최경수</span>입니다.
+                풀스택 개발자 <span className='text-white font-medium'>최경수</span>입니다.
               </p>
               <p>
                 React, TypeScript를 주력으로 사용하며, 컴포넌트 설계와 성능 최적화에
@@ -71,20 +75,6 @@ const AboutSection = () => {
                 </div>
               ))}
             </div>
-
-            {/* CTA */}
-            <a
-              href='/resume.pdf'
-              target='_blank'
-              rel='noreferrer'
-              className='group flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 hover:border-indigo-500/40 text-slate-300 hover:text-white text-sm font-medium transition-all duration-200 glass-card'
-            >
-              <svg className='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' />
-              </svg>
-              Download Resume
-              <span className='ml-auto group-hover:translate-x-1 transition-transform'>→</span>
-            </a>
           </div>
         </div>
       </div>
