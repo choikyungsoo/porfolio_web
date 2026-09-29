@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { cn } from '@libs/cn';
+import devineImg from '@assets/devine.svg';
 
 /** Behance/Pinterest style project card thumbnails using SVG art */
 const ProjectThumbnail = ({
@@ -141,6 +142,7 @@ const PROJECTS: Project[] = [
     gradient: '#3730a3 #6d28d9',
     pattern: 'browser',
     category: '프로젝트',
+    image: devineImg,
   },
   {
     title: 'UMC 프로젝트 A',
