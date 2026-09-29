@@ -31,7 +31,7 @@ const Navigation = () => {
       <nav className='max-w-6xl mx-auto px-6 h-16 flex-row-between'>
         {/* Logo */}
         <a href='#hero' className='hover:opacity-80 transition-opacity'>
-          <img src='/logo-white.svg' alt='Kyungsoo Choi logo' className='h-8 w-auto' />
+          <img src='/logo-white.svg' alt='Kyungsoo Choi logo' className='h-5 w-auto' />
         </a>
 
         {/* Desktop Nav */}
@@ -47,14 +47,6 @@ const Navigation = () => {
               </a>
             </li>
           ))}
-          <li>
-            <a
-              href='#contact'
-              className='px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium transition-colors duration-200'
-            >
-              Hire Me
-            </a>
-          </li>
         </ul>
 
         {/* Mobile Menu Button */}

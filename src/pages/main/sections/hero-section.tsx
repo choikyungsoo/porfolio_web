@@ -55,7 +55,7 @@ const HeroSection = () => {
           </div>
 
           {/* Name — typewriter */}
-          <h1 className="font-black text-5xl leading-tight tracking-widest md:text-7xl lg:text-8xl">
+          <h1 className="font-black text-5xl leading-tight md:text-7xl lg:text-8xl">
             <span className="gradient-text">{displayed}</span>
             {/* Blinking cursor: stops blinking after done */}
             <span
@@ -70,7 +70,7 @@ const HeroSection = () => {
           <div className="flex animate-delay-3 animate-fade-in-up items-center gap-3">
             <span className="h-px w-8 bg-indigo-500" />
             <p className="font-medium text-indigo-300 text-lg tracking-wide">
-              Frontend & Backend Developer
+              Full Stack Developer
             </p>
             <span className="h-px w-8 bg-indigo-500" />
           </div>
@@ -91,12 +91,6 @@ const HeroSection = () => {
               <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">
                 →
               </span>
-            </a>
-            <a
-              href="#contact"
-              className="hover:-translate-y-0.5 glass-card rounded-xl border border-white/10 px-7 py-3 font-semibold text-slate-300 text-sm transition-all duration-200 hover:border-indigo-500/30 hover:text-white"
-            >
-              Contact Me
             </a>
           </div>
 
