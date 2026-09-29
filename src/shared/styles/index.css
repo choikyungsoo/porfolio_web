@@ -1,1 +1,4 @@
+@import "./font.css";
 @import "tailwindcss";
+@import "./theme.css";
+@import "./custom-utilities.css";

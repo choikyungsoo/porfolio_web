@@ -1,9 +1,26 @@
+import Navigation from '@components/navigation/navigation';
+import Footer from '@components/footer/footer';
+import HeroSection from './sections/hero-section';
+import AboutSection from './sections/about-section';
+import SkillsSection from './sections/skills-section';
+import ExperienceSection from './sections/experience-section';
+import ProjectsSection from './sections/projects-section';
+import ContactSection from './sections/contact-section';
 
 const MainPage = () => {
   return (
-    <div>
-      메인페이지 입니다.
-    </div>
+    <>
+      <Navigation />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </>
   );
 };
 
