@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { cn } from '@libs/cn';
+
 /** Behance/Pinterest style project card thumbnails using SVG art */
 const ProjectThumbnail = ({
   gradient,
@@ -9,7 +12,6 @@ const ProjectThumbnail = ({
   const patterns = {
     browser: (
       <svg viewBox='0 0 340 180' fill='none' className='w-full h-full'>
-        {/* Browser frame */}
         <rect width='340' height='180' fill='url(#b1)' />
         <rect x='20' y='15' width='300' height='150' rx='10' fill='rgba(0,0,0,0.4)' />
         <rect x='20' y='15' width='300' height='28' rx='10' fill='rgba(0,0,0,0.5)' />
@@ -17,7 +19,6 @@ const ProjectThumbnail = ({
         <circle cx='54' cy='29' r='5' fill='#ffbd2e' />
         <circle cx='70' cy='29' r='5' fill='#28ca41' />
         <rect x='85' y='21' width='180' height='16' rx='8' fill='rgba(255,255,255,0.08)' />
-        {/* Content lines */}
         <rect x='35' y='54' width='120' height='10' rx='5' fill='rgba(255,255,255,0.4)' />
         <rect x='35' y='70' width='80' height='7' rx='3.5' fill='rgba(255,255,255,0.2)' />
         <rect x='35' y='84' width='100' height='7' rx='3.5' fill='rgba(255,255,255,0.15)' />
@@ -35,7 +36,6 @@ const ProjectThumbnail = ({
     mobile: (
       <svg viewBox='0 0 340 180' fill='none' className='w-full h-full'>
         <rect width='340' height='180' fill='url(#m1)' />
-        {/* Mobile frames */}
         <rect x='105' y='10' width='65' height='115' rx='10' fill='rgba(0,0,0,0.45)' stroke='rgba(255,255,255,0.1)' strokeWidth='1' />
         <rect x='183' y='25' width='65' height='115' rx='10' fill='rgba(0,0,0,0.35)' stroke='rgba(255,255,255,0.08)' strokeWidth='1' />
         <rect x='115' y='28' width='45' height='7' rx='3.5' fill='rgba(255,255,255,0.3)' />
@@ -57,24 +57,19 @@ const ProjectThumbnail = ({
     dashboard: (
       <svg viewBox='0 0 340 180' fill='none' className='w-full h-full'>
         <rect width='340' height='180' fill='url(#d1)' />
-        {/* Sidebar */}
         <rect x='20' y='15' width='60' height='150' rx='8' fill='rgba(0,0,0,0.4)' />
-        {/* Content area */}
         <rect x='90' y='15' width='230' height='68' rx='8' fill='rgba(0,0,0,0.3)' />
         <rect x='90' y='90' width='110' height='75' rx='8' fill='rgba(0,0,0,0.3)' />
         <rect x='210' y='90' width='110' height='75' rx='8' fill='rgba(0,0,0,0.3)' />
-        {/* Sidebar items */}
         <rect x='30' y='30' width='40' height='6' rx='3' fill='rgba(255,255,255,0.3)' />
         <rect x='30' y='48' width='30' height='5' rx='2.5' fill='rgba(255,255,255,0.15)' />
         <rect x='30' y='62' width='35' height='5' rx='2.5' fill='rgba(255,255,255,0.12)' />
         <rect x='30' y='76' width='25' height='5' rx='2.5' fill='rgba(255,255,255,0.1)' />
-        {/* Chart bars */}
         <rect x='100' y='50' width='15' height='20' rx='3' fill='rgba(255,255,255,0.25)' />
         <rect x='122' y='40' width='15' height='30' rx='3' fill='rgba(255,255,255,0.3)' />
         <rect x='144' y='45' width='15' height='25' rx='3' fill='rgba(255,255,255,0.2)' />
         <rect x='166' y='35' width='15' height='35' rx='3' fill='rgba(255,255,255,0.35)' />
         <rect x='188' y='42' width='15' height='28' rx='3' fill='rgba(255,255,255,0.22)' />
-        {/* Stats numbers */}
         <rect x='102' y='106' width='50' height='12' rx='4' fill='rgba(255,255,255,0.35)' />
         <rect x='102' y='122' width='30' height='8' rx='3' fill='rgba(255,255,255,0.15)' />
         <rect x='222' y='106' width='50' height='12' rx='4' fill='rgba(255,255,255,0.3)' />
@@ -90,13 +85,11 @@ const ProjectThumbnail = ({
     api: (
       <svg viewBox='0 0 340 180' fill='none' className='w-full h-full'>
         <rect width='340' height='180' fill='url(#a1)' />
-        {/* API terminal look */}
         <rect x='20' y='15' width='300' height='150' rx='10' fill='rgba(0,0,0,0.5)' />
         <rect x='20' y='15' width='300' height='24' rx='10' fill='rgba(0,0,0,0.6)' />
         <rect x='30' y='50' width='40' height='7' rx='3.5' fill='#34d399' opacity='0.8' />
         <rect x='78' y='50' width='120' height='7' rx='3.5' fill='rgba(255,255,255,0.5)' />
         <rect x='30' y='65' width='50' height='7' rx='3.5' fill='#60a5fa' opacity='0.8' />
-        <rect x='88' y='65' width='80' height='7' rx='3.5' fill='rgba(255,255,255,0.4)' />
         <rect x='88' y='65' width='80' height='7' rx='3.5' fill='rgba(255,255,255,0.4)' />
         <rect x='30' y='82' width='60' height='7' rx='3.5' fill='#f59e0b' opacity='0.8' />
         <rect x='98' y='82' width='100' height='7' rx='3.5' fill='rgba(255,255,255,0.35)' />
@@ -118,7 +111,26 @@ const ProjectThumbnail = ({
   return patterns[pattern];
 };
 
-const PROJECTS = [
+/* ── Types ── */
+
+type TabId = '전체' | '프로젝트' | '해커톤' | '대회' | '기타';
+
+type Project = {
+  title: string;
+  description: string;
+  tags: string[];
+  github: string;
+  demo: string;
+  gradient: string;
+  pattern: 'browser' | 'mobile' | 'dashboard' | 'api';
+  category: Exclude<TabId, '전체'>;
+};
+
+/* ── Data ── */
+
+const TABS: TabId[] = ['전체', '프로젝트', '해커톤', '대회', '기타'];
+
+const PROJECTS: Project[] = [
   {
     title: 'Portfolio Website',
     description: '개인 포트폴리오 웹사이트. React + TypeScript + Tailwind CSS로 제작한 반응형 SPA입니다.',
@@ -126,8 +138,8 @@ const PROJECTS = [
     github: 'https://github.com/choikyungsoo/porfolio_web',
     demo: '#',
     gradient: '#3730a3 #6d28d9',
-    pattern: 'browser' as const,
-    size: 'large',
+    pattern: 'browser',
+    category: '프로젝트',
   },
   {
     title: 'UMC 프로젝트 A',
@@ -136,8 +148,8 @@ const PROJECTS = [
     github: '#',
     demo: '#',
     gradient: '#0e7490 #0369a1',
-    pattern: 'mobile' as const,
-    size: 'normal',
+    pattern: 'mobile',
+    category: '프로젝트',
   },
   {
     title: 'UMC 프로젝트 B',
@@ -146,29 +158,47 @@ const PROJECTS = [
     github: '#',
     demo: '#',
     gradient: '#14532d #065f46',
-    pattern: 'api' as const,
-    size: 'normal',
+    pattern: 'api',
+    category: '프로젝트',
   },
   {
-    title: '대시보드 프로젝트',
-    description: '데이터 시각화 대시보드. 복잡한 데이터를 사용자가 이해하기 쉽게 표현했습니다.',
-    tags: ['Next.js', 'TypeScript', 'TanStack Query'],
+    title: '구름톤 해커톤',
+    description: '구름톤 유니브에서 진행한 해커톤 프로젝트입니다.',
+    tags: ['React', 'JavaScript'],
+    github: '#',
+    demo: '#',
+    gradient: '#064e3b #065f46',
+    pattern: 'browser',
+    category: '해커톤',
+  },
+  {
+    title: 'SW 개발 경진대회',
+    description: 'AI를 활용한 서비스 만들기 대회에서 우수상을 수상한 프로젝트입니다.',
+    tags: ['React', 'TypeScript'],
+    github: '#',
+    demo: '#',
+    gradient: '#78350f #92400e',
+    pattern: 'dashboard',
+    category: '대회',
+  },
+  {
+    title: '창업 경진대회 — 나비',
+    description: '일기를 기반한 AI 대화 서비스 "나의 비밀친구, 나비". 창업 경진대회 우수상 수상작입니다.',
+    tags: ['React-Native', 'JavaScript'],
     github: '#',
     demo: '#',
     gradient: '#4c1d95 #831843',
-    pattern: 'dashboard' as const,
-    size: 'large',
+    pattern: 'mobile',
+    category: '대회',
   },
 ];
 
-type Project = (typeof PROJECTS)[number];
+/* ── Components ── */
 
 const ProjectCard = ({ project }: { project: Project }) => (
   <div className='group glass-card rounded-2xl overflow-hidden hover:border-white/15 transition-all duration-300 hover:-translate-y-1.5 flex flex-col'>
-    {/* Thumbnail */}
     <div className='relative overflow-hidden aspect-[16/9]'>
       <ProjectThumbnail gradient={project.gradient} pattern={project.pattern} />
-      {/* Hover overlay */}
       <div className='absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-row-center gap-4'>
         <a
           href={project.github}
@@ -194,11 +224,15 @@ const ProjectCard = ({ project }: { project: Project }) => (
       </div>
     </div>
 
-    {/* Card body */}
     <div className='flex flex-col gap-3 p-5 flex-1'>
-      <h3 className='text-white font-semibold text-base group-hover:text-indigo-300 transition-colors'>
-        {project.title}
-      </h3>
+      <div className='flex items-start justify-between gap-2'>
+        <h3 className='text-white font-semibold text-base group-hover:text-indigo-300 transition-colors'>
+          {project.title}
+        </h3>
+        <span className='flex-shrink-0 text-[10px] font-mono px-2 py-0.5 rounded-full border border-white/10 text-slate-500'>
+          {project.category}
+        </span>
+      </div>
       <p className='text-slate-500 text-sm leading-relaxed flex-1'>{project.description}</p>
       <div className='flex flex-wrap gap-1.5 pt-1'>
         {project.tags.map(tag => (
@@ -215,13 +249,19 @@ const ProjectCard = ({ project }: { project: Project }) => (
 );
 
 const ProjectsSection = () => {
+  const [activeTab, setActiveTab] = useState<TabId>('전체');
+
+  const filtered = activeTab === '전체'
+    ? PROJECTS
+    : PROJECTS.filter(p => p.category === activeTab);
+
   return (
     <section id='projects' className='py-32 px-6 relative'>
       <div className='absolute top-1/3 right-0 w-[500px] h-[500px] bg-violet-700/8 rounded-full blur-[120px] pointer-events-none' />
 
       <div className='max-w-6xl mx-auto relative z-10'>
         {/* Section header */}
-        <div className='text-center mb-16'>
+        <div className='text-center mb-12'>
           <p className='text-indigo-400 text-sm font-mono tracking-widest uppercase mb-3'>
             My Work
           </p>
@@ -231,17 +271,60 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        {/* Pinterest/Behance grid */}
-        <div
-          className='columns-1 sm:columns-2 lg:columns-2 gap-6 space-y-6'
-          style={{ columnFill: 'balance' }}
-        >
-          {PROJECTS.map(project => (
-            <div key={project.title} className='break-inside-avoid mb-6'>
-              <ProjectCard project={project} />
-            </div>
-          ))}
+        {/* Tabs */}
+        <div className='flex-row-center mb-10'>
+          <div className='flex items-center gap-1.5 p-1 rounded-xl glass-card'>
+            {TABS.map(tab => {
+              const count = tab === '전체'
+                ? PROJECTS.length
+                : PROJECTS.filter(p => p.category === tab).length;
+              return (
+                <button
+                  key={tab}
+                  type='button'
+                  onClick={() => setActiveTab(tab)}
+                  className={cn(
+                    'flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200',
+                    activeTab === tab
+                      ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20'
+                      : 'text-slate-400 hover:text-white hover:bg-white/5',
+                  )}
+                >
+                  {tab}
+                  <span
+                    className={cn(
+                      'text-[10px] font-mono px-1.5 py-0.5 rounded-full',
+                      activeTab === tab
+                        ? 'bg-white/20 text-white'
+                        : 'bg-white/5 text-slate-500',
+                    )}
+                  >
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
+
+        {/* Grid */}
+        {filtered.length > 0 ? (
+          <div
+            className='columns-1 sm:columns-2 lg:columns-2 gap-6'
+            style={{ columnFill: 'balance' }}
+          >
+            {filtered.map(project => (
+              <div key={project.title} className='break-inside-avoid mb-6'>
+                <ProjectCard project={project} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className='flex-col-center py-24 text-slate-600'>
+            <p className='text-4xl mb-4'>🗂️</p>
+            <p className='text-sm'>해당 카테고리의 프로젝트가 없습니다.</p>
+          </div>
+        )}
 
         {/* CTA */}
         <div className='text-center mt-14'>
