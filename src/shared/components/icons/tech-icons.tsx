@@ -166,3 +166,165 @@ export const TanstackIcon = ({ className }: IconProps) => (
     <path d="M20 65 Q35 40 50 65 Q65 90 80 65" stroke="#EAB308" strokeWidth="5" strokeLinecap="round" fill="none" />
   </svg>
 );
+
+/* ── IDE / Editor Icons ── */
+
+export const VSCodeIcon = ({ className }: IconProps) => (
+  <svg className={className} viewBox="0 0 100 100" fill="none">
+    <rect width="100" height="100" rx="8" fill="#1e1e2e" />
+    <path d="M72 18L42 48 25 34 18 40 38 57 18 74 25 80 42 66 72 96 82 90V24L72 18z" fill="#007ACC" />
+    <path d="M72 18L42 48 72 76V57L52 50 72 43V18z" fill="#1BA1E2" opacity="0.6" />
+    <path d="M18 40L38 57 18 74 25 80 42 66 42 48 25 34z" fill="#0065A9" opacity="0.7" />
+  </svg>
+);
+
+export const WebStormIcon = ({ className }: IconProps) => (
+  <svg className={className} viewBox="0 0 100 100" fill="none">
+    <rect width="100" height="100" rx="8" fill="#1C1C1E" />
+    <rect x="12" y="12" width="76" height="76" rx="6" fill="url(#ws-grad)" />
+    <rect x="18" y="72" width="30" height="6" rx="2" fill="black" opacity="0.7" />
+    <path d="M22 28h15M22 40h25M22 52h18" stroke="white" strokeWidth="5" strokeLinecap="round" />
+    <path d="M55 55 Q62 42 70 55 Q78 42 85 55" stroke="white" strokeWidth="4" strokeLinecap="round" fill="none" />
+    <defs>
+      <linearGradient id="ws-grad" x1="12" y1="12" x2="88" y2="88" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#00BCD4" />
+        <stop offset="1" stopColor="#1565C0" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+export const IntelliJIcon = ({ className }: IconProps) => (
+  <svg className={className} viewBox="0 0 100 100" fill="none">
+    <rect width="100" height="100" rx="8" fill="#1C1C1E" />
+    <rect x="12" y="12" width="76" height="76" rx="6" fill="url(#ij-grad)" />
+    <rect x="18" y="72" width="30" height="6" rx="2" fill="black" opacity="0.7" />
+    <path d="M22 28h12M22 40h22M22 52h16" stroke="white" strokeWidth="5" strokeLinecap="round" />
+    <path d="M52 30 L68 50 L52 70" stroke="white" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <defs>
+      <linearGradient id="ij-grad" x1="12" y1="12" x2="88" y2="88" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#FF5370" />
+        <stop offset="0.5" stopColor="#E91E8C" />
+        <stop offset="1" stopColor="#C000FA" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+export const AndroidStudioIcon = ({ className }: IconProps) => (
+  <svg className={className} viewBox="0 0 100 100" fill="none">
+    <rect width="100" height="100" rx="8" fill="#1C2B1C" />
+    {/* Android head */}
+    <ellipse cx="50" cy="42" rx="22" ry="20" fill="#3DDC84" />
+    <circle cx="42" cy="40" r="3" fill="#1C2B1C" />
+    <circle cx="58" cy="40" r="3" fill="#1C2B1C" />
+    {/* Antennae */}
+    <line x1="40" y1="23" x2="34" y2="15" stroke="#3DDC84" strokeWidth="3" strokeLinecap="round" />
+    <line x1="60" y1="23" x2="66" y2="15" stroke="#3DDC84" strokeWidth="3" strokeLinecap="round" />
+    {/* Body */}
+    <rect x="28" y="58" width="44" height="26" rx="8" fill="#3DDC84" />
+    <rect x="18" y="58" width="10" height="20" rx="5" fill="#3DDC84" />
+    <rect x="72" y="58" width="10" height="20" rx="5" fill="#3DDC84" />
+    {/* Legs */}
+    <rect x="34" y="80" width="10" height="12" rx="5" fill="#3DDC84" />
+    <rect x="56" y="80" width="10" height="12" rx="5" fill="#3DDC84" />
+  </svg>
+);
+
+export const EclipseIcon = ({ className }: IconProps) => (
+  <svg className={className} viewBox="0 0 100 100" fill="none">
+    <rect width="100" height="100" rx="8" fill="#1a1a2e" />
+    <circle cx="50" cy="50" r="32" stroke="#F7941E" strokeWidth="4" fill="none" />
+    <ellipse cx="44" cy="50" rx="22" ry="32" fill="#1a1a2e" stroke="#F7941E" strokeWidth="3" />
+    <circle cx="50" cy="50" r="10" fill="#F7941E" opacity="0.3" />
+    <circle cx="50" cy="50" r="5" fill="#F7941E" />
+  </svg>
+);
+
+/* ── Communication Tools ── */
+
+export const SlackIcon = ({ className }: IconProps) => (
+  <svg className={className} viewBox="0 0 100 100" fill="none">
+    <rect width="100" height="100" rx="8" fill="#1a1a2e" />
+    {/* Slack hash/logo simplified */}
+    <rect x="20" y="38" width="24" height="10" rx="5" fill="#E01E5A" />
+    <rect x="20" y="28" width="10" height="24" rx="5" fill="#E01E5A" />
+    <circle cx="20" cy="62" r="7" fill="#E01E5A" />
+    <rect x="56" y="38" width="24" height="10" rx="5" fill="#36C5F0" />
+    <rect x="70" y="28" width="10" height="24" rx="5" fill="#36C5F0" />
+    <circle cx="90" cy="48" r="7" fill="#36C5F0" />
+    <rect x="44" y="52" width="10" height="24" rx="5" fill="#2EB67D" />
+    <rect x="34" y="66" width="24" height="10" rx="5" fill="#2EB67D" />
+    <circle cx="68" cy="76" r="7" fill="#2EB67D" />
+    <rect x="44" y="24" width="10" height="24" rx="5" fill="#ECB22E" />
+    <rect x="34" y="24" width="24" height="10" rx="5" fill="#ECB22E" />
+    <circle cx="34" cy="24" r="7" fill="#ECB22E" />
+  </svg>
+);
+
+export const NotionIcon = ({ className }: IconProps) => (
+  <svg className={className} viewBox="0 0 100 100" fill="none">
+    <rect width="100" height="100" rx="8" fill="#191919" />
+    <path
+      d="M28 22h30l16 16v40c0 2.2-1.8 4-4 4H28c-2.2 0-4-1.8-4-4V26c0-2.2 1.8-4 4-4z"
+      fill="white"
+      stroke="#333"
+      strokeWidth="1"
+    />
+    <path d="M58 22v12a2 2 0 002 2h12" stroke="#ccc" strokeWidth="1.5" fill="none" />
+    <rect x="32" y="44" width="36" height="3" rx="1.5" fill="#999" />
+    <rect x="32" y="52" width="28" height="3" rx="1.5" fill="#bbb" />
+    <rect x="32" y="60" width="32" height="3" rx="1.5" fill="#aaa" />
+    <rect x="32" y="68" width="20" height="3" rx="1.5" fill="#bbb" />
+  </svg>
+);
+
+export const DiscordIcon = ({ className }: IconProps) => (
+  <svg className={className} viewBox="0 0 100 100" fill="none">
+    <rect width="100" height="100" rx="8" fill="#1a1a2e" />
+    <path
+      d="M38 30c-3 0-10 2-16 8C16 44 14 56 14 56s4 6 10 8c2-2 4-5 4-5s-6-2-8-5c2 1 4 2 7 3 5 2 11 2 13 2s8 0 13-2c3-1 5-2 7-3-2 3-8 5-8 5s2 3 4 5c6-2 10-8 10-8s-2-12-8-18c-6-6-13-8-16-8l-2 3c-2 0-4-1-6-1-2 0-4 1-6 1l-2-3z"
+      fill="#5865F2"
+    />
+    <circle cx="39" cy="51" r="6" fill="#1a1a2e" />
+    <circle cx="61" cy="51" r="6" fill="#1a1a2e" />
+    <circle cx="39" cy="51" r="4" fill="#5865F2" opacity="0.7" />
+    <circle cx="61" cy="51" r="4" fill="#5865F2" opacity="0.7" />
+  </svg>
+);
+
+/* ── AI Tools ── */
+
+export const ClaudeIcon = ({ className }: IconProps) => (
+  <svg className={className} viewBox="0 0 100 100" fill="none">
+    <rect width="100" height="100" rx="8" fill="#1a1512" />
+    {/* Claude logo — stylized C / coral diamond */}
+    <path
+      d="M50 18 L68 34 L68 66 L50 82 L32 66 L32 34 Z"
+      fill="none"
+      stroke="#D97757"
+      strokeWidth="3.5"
+    />
+    <path d="M50 18 L50 82" stroke="#D97757" strokeWidth="2" opacity="0.3" />
+    <path d="M32 34 L68 66" stroke="#D97757" strokeWidth="2" opacity="0.3" />
+    <path d="M68 34 L32 66" stroke="#D97757" strokeWidth="2" opacity="0.3" />
+    <circle cx="50" cy="50" r="10" fill="#D97757" opacity="0.9" />
+    <circle cx="50" cy="50" r="5" fill="#1a1512" />
+  </svg>
+);
+
+export const CodexIcon = ({ className }: IconProps) => (
+  <svg className={className} viewBox="0 0 100 100" fill="none">
+    <rect width="100" height="100" rx="8" fill="#0d1117" />
+    {/* OpenAI-style minimal logo */}
+    <circle cx="50" cy="50" r="28" stroke="white" strokeWidth="3" fill="none" />
+    <path
+      d="M50 22 L61 38 L78 38 L65 50 L70 67 L50 58 L30 67 L35 50 L22 38 L39 38 Z"
+      fill="none"
+      stroke="white"
+      strokeWidth="2.5"
+      strokeLinejoin="round"
+    />
+    <circle cx="50" cy="50" r="6" fill="white" opacity="0.9" />
+  </svg>
+);
