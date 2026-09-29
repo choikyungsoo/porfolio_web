@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const FULL_NAME = 'KYUNGSOO CHOI.';
+const FULL_NAME = 'KYUNGSOO CHOI';
 
 const useTypewriter = (text: string, speed = 100, startDelay = 500) => {
   const [displayed, setDisplayed] = useState('');
@@ -55,7 +55,7 @@ const HeroSection = () => {
           </div>
 
           {/* Name — typewriter */}
-          <h1 className="font-black text-5xl leading-tight tracking-tight md:text-7xl lg:text-8xl">
+          <h1 className="font-black text-5xl leading-tight tracking-widest md:text-7xl lg:text-8xl">
             <span className="gradient-text">{displayed}</span>
             {/* Blinking cursor: stops blinking after done */}
             <span
