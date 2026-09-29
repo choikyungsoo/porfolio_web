@@ -34,7 +34,6 @@ const AboutSection = () => {
               </div>
 
               {/* Decorative elements */}
-              <div className='absolute -top-4 -right-4 w-24 h-24 border border-indigo-500/30 rounded-xl' />
               <div className='absolute -bottom-4 -left-4 w-16 h-16 bg-indigo-600/20 rounded-xl blur-sm' />
 
               {/* Floating badge */}
