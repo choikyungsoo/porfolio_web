@@ -124,6 +124,7 @@ type Project = {
   gradient: string;
   pattern: 'browser' | 'mobile' | 'dashboard' | 'api';
   category: Exclude<TabId, '전체'>;
+  image?: string; // 서비스 이미지 URL (없으면 SVG 썸네일 사용)
 };
 
 /* ── Data ── */
@@ -132,10 +133,10 @@ const TABS: TabId[] = ['전체', '프로젝트', '해커톤', '대회', '기타'
 
 const PROJECTS: Project[] = [
   {
-    title: 'Portfolio Website',
-    description: '개인 포트폴리오 웹사이트. React + TypeScript + Tailwind CSS로 제작한 반응형 SPA입니다.',
+    title: 'Devine',
+    description: 'GitHub 코드 분석 기반 사이드 프로젝트 매칭 플랫폼으로 UMC 9기에서 시작한 프로젝트 입니다.',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    github: 'https://github.com/choikyungsoo/porfolio_web',
+    github: 'https://github.com/DeVine-2025/DeVine_FrontEnd',
     demo: '#',
     gradient: '#3730a3 #6d28d9',
     pattern: 'browser',
@@ -198,7 +199,15 @@ const PROJECTS: Project[] = [
 const ProjectCard = ({ project }: { project: Project }) => (
   <div className='group glass-card rounded-2xl overflow-hidden hover:border-white/15 transition-all duration-300 hover:-translate-y-1.5 flex flex-col'>
     <div className='relative overflow-hidden aspect-[16/9]'>
-      <ProjectThumbnail gradient={project.gradient} pattern={project.pattern} />
+      {project.image ? (
+        <img
+          src={project.image}
+          alt={project.title}
+          className='w-full h-full object-cover'
+        />
+      ) : (
+        <ProjectThumbnail gradient={project.gradient} pattern={project.pattern} />
+      )}
       <div className='absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-row-center gap-4'>
         <a
           href={project.github}
